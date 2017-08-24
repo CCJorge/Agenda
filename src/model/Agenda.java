@@ -43,11 +43,10 @@ public class Agenda {
     }
 
     public void setNome(String nome) {
-        if (Check.string(nome)) {
-            this.nome = nome;
-        } else {
+        if (!Check.string(nome)) {
             throw new IllegalArgumentException("Nome inválido");
         }
+        this.nome = nome;
     }
 
     public String getEmail() {
@@ -55,11 +54,11 @@ public class Agenda {
     }
 
     public void setEmail(String email) {
-        if (Check.email(email)) {
-            this.email = email;
-        } else {
+        if (!Check.email(email)) {
             throw new IllegalArgumentException("E-mail inválido");
         }
+        this.email = email;
+
     }
 
     public String getCelular() {
@@ -67,11 +66,10 @@ public class Agenda {
     }
 
     public void setCelular(String celular) {
-        if (Check.celular(celular)) {
-            this.celular = celular;
-        } else {
-            throw new IllegalArgumentException("Numero inválido");
+        if (!Check.celular(celular)) {
+            throw new IllegalArgumentException("Numero de celular inválido");
         }
+        this.celular = celular;
     }
 
     public String getTelefone() {
@@ -79,10 +77,9 @@ public class Agenda {
     }
 
     public void setTelefone(String telefone) {
-        if (Check.telefone(telefone)) {
-            this.telefone = telefone;
-        } else {
-            throw new IllegalArgumentException("Numero inválido");
+        if (!Check.telefone(telefone)) {
+            throw new IllegalArgumentException("Numero de telefone inválido");
         }
+        this.telefone = telefone;
     }
 }

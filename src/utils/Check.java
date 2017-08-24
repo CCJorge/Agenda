@@ -28,7 +28,7 @@ public class Check {
     }
 
     public static boolean celular(String celular) {
-        String regex = "[0-9]*";
+        String regex = "\\d*";
         boolean ret = true
                 ? celular.matches(regex) && celular.length() == 9 || celular.matches(regex) && celular.length() == 11
                 : false;
@@ -37,7 +37,7 @@ public class Check {
     }
 
     public static boolean email(String email) {
-        String regex = ".*@.*\\.\\w{2,3}\\.{0,1}\\w{0,2}";
+        String regex = "\\w*@\\w*\\.\\w{2,3}\\.{0,1}\\w{0,2}";
         boolean ret = true
                 ? email.length() > 15 && email.matches(regex)
                 : false;

@@ -5,6 +5,7 @@
  */
 package view;
 
+import javax.swing.JOptionPane;
 import model.Agenda;
 
 /**
@@ -46,7 +47,6 @@ public class AgendaView extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
-        setType(java.awt.Window.Type.UTILITY);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jLabel1.setText("Agenda");
@@ -179,16 +179,18 @@ public class AgendaView extends javax.swing.JFrame {
     }//GEN-LAST:event_btnListarActionPerformed
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-
-        new Agenda(txtNome.getText(),
-                txtCelular.getText(),
-                txtEmail.getText(),
-                txtTelefone.getText());
-
-        txtNome.setText(null);
+        try {
+            new Agenda(txtNome.getText(),
+                    txtCelular.getText(),
+                    txtEmail.getText(),
+                    txtTelefone.getText());
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+        /*txtNome.setText(null);
         txtEmail.setText(null);
         txtCelular.setText(null);
-        txtTelefone.setText(null);
+        txtTelefone.setText(null);*/
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     /**
