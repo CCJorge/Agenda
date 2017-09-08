@@ -6,11 +6,20 @@
 package utils;
 
 /**
+ * <h1>Classe Format</h1>
+ * Essa class é responsável pela formatação de strings
  *
  * @author JORGE
  */
 public class Format {
 
+    /**
+     * Esse método formata um celular em String para 99-99999-9999 caso tenha 11
+     * digitos ou para 99999-9999 caso tenha 9 digitos
+     *
+     * @param celular O número de celular em uma String
+     * @return O número de celular formatado em uma String
+     */
     public static String celular(String celular) {
         String ret = "";
         switch (celular.length()) {
@@ -27,6 +36,13 @@ public class Format {
         return ret;
     }
 
+    /**
+     * Esse método formata um telefone em String para 99-9999-9999 caso tenha 10
+     * digitos ou para 9999-9999 caso tenha 8 digitos
+     *
+     * @param telefone O número de celular em uma String
+     * @return O número de telefone formatado em uma String
+     */
     public static String telefone(String telefone) {
         String ret = "";
         switch (telefone.length()) {

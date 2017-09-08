@@ -1,5 +1,6 @@
 package agenda;
 
+import dao.AgendaDao;
 import view.AgendaView;
 
 /*
@@ -18,10 +19,10 @@ public class AgendaMain {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-
+        AgendaDao.carregar();
         AgendaView view = new AgendaView();
         view.setVisible(true);
-        
+
     }
 
 }
